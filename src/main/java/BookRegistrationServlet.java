@@ -5,7 +5,6 @@ import java.io.*;
 public class BookRegistrationServlet extends HttpServlet {
     private final BookDAO bookDAO;
 
-    // THIS constructor will be called by Spring
     public BookRegistrationServlet(BookDAO bookDAO) {
         this.bookDAO = bookDAO;
     }
@@ -31,9 +30,9 @@ public class BookRegistrationServlet extends HttpServlet {
         resp.setContentType("text/html");
         try (PrintWriter out = resp.getWriter()) {
             if (success) {
-                out.println("<h3 style='color:green;'>✅ Book Registered Successfully!</h3>");
+                out.println("<h3 style='color:green;'>Book Registered Successfully!</h3>");
             } else {
-                out.println("<h3 style='color:red;'>❌ Failed to register book.</h3>");
+                out.println("<h3 style='color:red;'>Failed to register book.</h3>");
             }
         }
     }
