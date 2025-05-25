@@ -5,7 +5,7 @@ public class DBUtil {
     private static final String USER = "root";
     private static final String PASSWORD = "password";
 
-    // Load JDBC driver (optional with newer versions)
+    // Load JDBC driver
     static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -19,7 +19,7 @@ public class DBUtil {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
-    // Close resources safely
+    // Close resources 
     public static void close(Connection conn, PreparedStatement ps, ResultSet rs) {
         try {
             if (rs != null) rs.close();
